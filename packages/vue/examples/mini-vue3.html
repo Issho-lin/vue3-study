@@ -1,0 +1,25 @@
+<div id="app">
+  <h3>{{ title }}</h3>
+</div>
+<script src="./mini-vue3.js"></script>
+<script>
+  const { createApp, effect, reactive } = Vue
+  const app = createApp({
+    data() {
+      return {
+        title: 'hello vue3!!!!!'
+      }
+    },
+    setup() {
+      const state = reactive({
+        title: 'hello vue3!'
+      })
+      setTimeout(() => {
+        state.title = 'hello vue3!!!!!!'
+      }, 1000);
+      return state
+    },
+  })
+
+  app.mount('#app')
+</script>
